@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        sravan
+        </title>
+    </head>
+    
+    <style>
+        html,body{
+            
+        width:100%;
+        margin:0;
+        padding:0;
+        overflow: hidden;
+        }
+        .top {
+            
+        }
+        .bottom{
+            
+        }
+        .left{
+            
+        }
+        .right{
+        
+        }
+    </style>
+<body>
+
+<!--<div style="width:10px; height:10px; background-color: aqua;border-radius:50%;position:relative; top: 100px;"></div>-->
+    <script>
+        const width = window.innerWidth;
+        const height = window.innerHeight;
+        console.log(width,height);
+        function random(num){
+            return Math.floor((Math.random()*num)+1)
+        }
+        let j=0;
+      
+        topi();
+        bottom();
+        left();
+        right();
+        function topi(){
+        for (let k=0;k<=width;k=k+20){
+            let randi = random(70);
+            document.body.innerHTML+=`<span style="width:${randi}px; height:${randi}px;border-radius:50%;background-color:rgb( ${random(255)},${random(255)},${random(255)}); position:absolute;top:-10px;left:${k}px;"></span>`
+            
+
+        }
+        }
+        function bottom(){
+            for (let k=0;k<=width;k=k+20){
+            document.body.innerHTML+=`<span style="width:15px; height:15px;border-radius:50%;background-color:rgb( ${random(255)},${random(255)},${random(255)}); position:absolute;bottom:-10px;left:${k}px;"></span>`
+        }
+        }
+        function left(){
+            for (let k=0;k<=height;k=k+20){
+
+            document.body.innerHTML+=`<span style="width:15px; height:15px;border-radius:50%;background-color:rgb( ${random(255)},${random(255)},${random(255)}); position:absolute;left:-10px;top:${k}px;"></span>`
+            
+           
+            
+        }
+        }
+        function right(){
+            for (let k=0;k<=height;k=k+20){
+
+            
+            document.body.innerHTML+=`<span style="width:15px; height:15px;border-radius:50%;background-color:rgb( ${random(255)},${random(255)},${random(255)}); position:absolute;right:-10px;top:${k}px;"></span>`
+           
+            
+        }
+}
+        //document.body.innerHTML=`"<div style="width:15px; height:15px; background-color: red;border-radius:50%;position:absolute; top:0px;left=${j}px"></div>"`
+        //document.body.innerHTML=`"<div style="width:15px; height:15px; background-color: red;border-radius:50%;position:absolute; top:0px;left=${25}px"></div>"`
+        const doc = document.querySelectorAll("span");
+        //console.log(doc[1],doc[1].style.top,doc[1].style.bottom);
+         //const w = window.screen.availHeight;
+        //const w=10;
+        //let pos =0;
+       
+        for (let q=0; q<=doc.length;q++) {
+            //console.log(doc[q].style.top);
+            
+            if (doc[q].style.top == "-10px"){
+                top_frame(q);
+                console.log("in if");
+                
+            }
+            else{
+                console.log("qq");
+                break;
+            }
+        }
+        function top_frame(q){
+            let pos =-10;
+            id = setInterval(t,random(1000))
+            function t(){
+                
+            if (pos>=height/2 ){
+                //setTimeout(function(){return undefined; },10000);
+                pos=pos-random(1000);
+                doc[q].style.top=pos+"px";
+                //console.log("process");
+                
+                //clearInterval(id);
+                //console.log("quittedd");
+
+            }
+            else{
+                pos=pos+random(10);
+                doc[q].style.top=pos+"px";
+                //console.log("process");
+            }
+        }
+        }
+        
+            /*setInterval(function{
+              if (pos===height){
+                  clearInterval(this);
+}
+else{
+    pos++;
+    q.style.top=pos+'px';
+}  
+            },100)};*/
+
+        //console.log(w);
+        //console.log(doc.length);
+        //doc.style.bottom= +"px";
+      /* id = setInterval(frame,100);
+        function frame(){
+            
+if (pos == w) {
+      clearInterval(id);
+    } else {
+      pos=pos+1; 
+       doc[1].style.top = pos+"px";
+        console.log(pos)
+    }*/
+ /*for(let i=10;i<=w-5;i++){
+        doc.style.bottom = i+"px";
+        console.log(i);
+    }*/
+
+   
+       /* function top(){
+            let j=20;
+            document.body.innerHTML=`"<div style="width:15px; height:15px; background-color: red;border-radius:50%;position:absolute; top:0px;"left=${j}px>"
+            
+        }*/
+    </script>
+    
+</body>
+</html>
